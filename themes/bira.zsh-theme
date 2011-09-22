@@ -4,10 +4,10 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
 local current_dir='%{$terminfo[bold]$fg[blue]%} %~%{$reset_color%}'
-if [[ whence rvm-prompt &> /dev/null ]]; then
+if whence rvm-prompt &> /dev/null; then
     local rvm_ruby='%{$fg[red]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
 fi
-if [[ whence python &> /dev/null ]]; then
+if whence python &> /dev/null; then
     local pybrew_python='%{$fg[green]%}‹$(python -V 2>&1)›%{$reset_color%}'
 fi
 local git_branch='$(git_prompt_info)%{$reset_color%}'
